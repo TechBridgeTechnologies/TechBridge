@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>TechBridge Technologies - About</title>
+  <meta charset='utf-8' />
+  <meta content='width=device-width, initial-scale=1' name='viewport' />
+  <meta content='' name='description' />
+  <meta content='' name='keywords' />
+  <link rel="icon" type="image/x-icon" href="./assets/Images/LOGOs/TechBridgeIcon.png">
+  <!-- Bootstrap Links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Google Font Links -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    rel="stylesheet" />
+
+  <style>
+    /* Define root variables */
+    :root {
+      /* Color's In RGB */
+      /* Primary Color's */
+      --primary-color: 0, 0, 255;
+      /* Blue */
+      --second-primary-color: 255, 255, 255;
+      /* White */
+      --third-primary-color: 0, 0, 0;
+      /* Black */
+
+      /* Background Color's */
+      --primary-bgcolor: var(--primary-color);
+      --second-primary-bgcolor: var(--second-primary-color);
+      --third-primary-bgcolor: var(--third-primary-color);
+
+      /* Foreground Color's */
+      --primary-fgcolor: var(--primary-color);
+      --second-primary-fgcolor: var(--second-primary-color);
+      --third-primary-fgcolor: var(--third-primary-color);
+
+      /* Button Color's */
+      --primary-btncolor: var(--primary-color);
+
+      /* Font's */
+      /* Primary Font */
+      --font-family: "Poppins", serif;
+    }
+
+    /* Basic Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: var(--font-family);
+    }
+
+    /* Announcement Bar, Navbar & Cover (Start) */
+
+    /* Announcement Bar */
+    .announcement-bar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      /* Ensure it stays above the navbar */
+      background-color: #ffd700;
+      /* Gold background */
+      color: rgba(var(--third-primary-fgcolor), 0.75);
+      text-align: center;
+      padding: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .announcement-bar a {
+      color: rgba(var(--third-primary-fgcolor), 1);
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    /* Custom CSS for navbar and hero section */
+    .navbar-custom {
+      background-color: rgba(var(--primary-bgcolor), 0) !important;
+      width: 100%;
+      top: 40px;
+      /* Space below the announcement bar */
+      z-index: 10;
+      text-align: center;
+    }
+
+    .navbar-scrolled {
+      color: rgba(var(--second-primary-fgcolor), 1) !important;
+      background-color: rgba(var(--third-primary-bgcolor), 0.5) !important;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(5px);
+    }
+
+    .nav-link {
+      color: rgba(var(--second-primary-fgcolor), 1) !important;
+      /* White text for menu items */
+    }
+
+    .nav-link:visited {
+      color: rgba(var(--second-primary-fgcolor), 0.8) !important;
+    }
+
+    .nav-link:hover {
+      color: rgba(var(--second-primary-fgcolor), 0.8) !important;
+    }
+
+    .nav-link:active {
+      color: rgba(var(--second-primary-fgcolor), 0.8) !important;
+    }
+
+    .navbar-custom .navbar-brand {
+      color: rgba(var(--second-primary-fgcolor), 1);
+      /* White text for the logo */
+    }
+
+    .dropdown-menu {
+      background-color: rgba(var(--third-primary-bgcolor), 0.5) !important;
+      backdrop-filter: blur(5px);
+    }
+
+    .dropdown-menu .dropdown-header {
+      color: rgba(var(--second-primary-fgcolor), 0.5);
+    }
+
+    .dropdown-menu .dropdown-item {
+      color: rgba(var(--second-primary-fgcolor), 1);
+    }
+
+    .dropdown-item:hover {
+      color: rgba(var(--second-primary-fgcolor), 1) !important;
+      background-color: rgba(var(--second-primary-bgcolor), 0.3);
+    }
+
+    .dropdown-divider {
+      border-color: rgba(var(--second-primary-bgcolor), 0.3) !important;
+    }
+
+    .hero {
+      position: relative;
+      height: 80vh;
+      /* Full height for hero section */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: rgba(var(--second-primary-fgcolor), 1);
+      overflow: hidden;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Ensures the video covers the entire area */
+      z-index: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* background: rgba(var(--primary-bgcolor), 0.5); */
+      /* Blue transparent overlay */
+      background: linear-gradient(to top left, rgba(var(--primary-bgcolor), 0.7), rgba(var(--second-primary-bgcolor), 0.3));
+      /* Gradient Blue & White transparent overlay */
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+      /* Make text readable over video */
+    }
+
+    @media(width<=367px) {
+
+      /* Announcement Bar */
+      .announcement-bar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        /* Ensure it stays above the navbar */
+        background-color: #ffd700;
+        /* Gold background */
+        color: rgba(var(--third-primary-fgcolor), 0.75);
+        text-align: center;
+        padding: 10px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      /* Custom CSS for navbar and hero section */
+      .navbar-custom {
+        background-color: rgba(var(--primary-bgcolor), 0) !important;
+        width: 100%;
+        top: 56px;
+        /* Space below the announcement bar */
+        z-index: 10;
+        text-align: center;
+      }
+
+      .navbar-scrolled {
+        color: rgba(var(--second-primary-fgcolor), 1) !important;
+        background-color: rgba(var(--third-primary-bgcolor), 0.5) !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav-link {
+        background-color: rgba(var(--third-primary-bgcolor), 0.5);
+        max-width: 100vw !important;
+        /* Set max width to 50% of the viewport */
+        border-radius: 30px;
+        backdrop-filter: blur(5px);
+        margin-left: auto;
+        /* Align menu to the right */
+        border-bottom: 0.5px solid rgba(var(--second-primary-bgcolor), 0.2);
+      }
+
+      .nav-link:hover {
+        color: rgba(var(--second-primary-fgcolor), 1) !important;
+        background-color: rgba(var(--second-primary-bgcolor), 0.3);
+      }
+
+      .dropdown-menu {
+        background-color: rgba(var(--third-primary-bgcolor), 0.5) !important;
+        backdrop-filter: blur(5px);
+        max-width: 90% !important;
+        transform: translateX(5.5%);
+      }
+    }
+
+    @media (width>=368px) and (width<=399px) {
+
+      /* Announcement Bar */
+      .announcement-bar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        /* Ensure it stays above the navbar */
+        background-color: #ffd700;
+        /* Gold background */
+        color: rgba(var(--third-primary-fgcolor), 0.75);
+        text-align: center;
+        padding: 10px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      /* Custom CSS for navbar and hero section */
+      .navbar-custom {
+        background-color: rgba(var(--primary-bgcolor), 0) !important;
+        width: 100%;
+        top: 38px;
+        /* Space below the announcement bar */
+        z-index: 10;
+        text-align: center;
+      }
+
+      .navbar-scrolled {
+        color: rgba(var(--second-primary-fgcolor), 1) !important;
+        background-color: rgba(var(--third-primary-bgcolor), 0.5) !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav-link {
+        background-color: rgba(var(--third-primary-bgcolor), 0.5);
+        max-width: 100vw !important;
+        /* Set max width to 50% of the viewport */
+        border-radius: 30px;
+        backdrop-filter: blur(5px);
+        margin-left: auto;
+        /* Align menu to the right */
+        border-bottom: 0.5px solid rgba(var(--second-primary-bgcolor), 0.2);
+      }
+
+      .nav-link:hover {
+        color: rgba(var(--second-primary-fgcolor), 1) !important;
+        background-color: rgba(var(--second-primary-bgcolor), 0.3);
+      }
+
+      .dropdown-menu {
+        background-color: rgba(var(--third-primary-bgcolor), 0.5) !important;
+        backdrop-filter: blur(5px);
+        max-width: 90% !important;
+        transform: translateX(6%);
+      }
+    }
+
+    @media (width>=400px) and (width<=500px) {
+
+      /* Announcement Bar */
+      .announcement-bar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        /* Ensure it stays above the navbar */
+        background-color: #ffd700;
+        /* Gold background */
+        color: rgba(var(--third-primary-fgcolor), 0.75);
+        text-align: center;
+        padding: 10px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      /* Custom CSS for navbar and hero section */
+      .navbar-custom {
+        background-color: rgba(var(--primary-bgcolor), 0) !important;
+        width: 100%;
+        top: 38px;
+        /* Space below the announcement bar */
+        z-index: 10;
+        text-align: center;
+      }
+
+      .navbar-scrolled {
+        color: rgba(var(--second-primary-fgcolor), 1) !important;
+        background-color: rgba(var(--third-primary-bgcolor), 0.5) !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav-link {
+        background-color: rgba(var(--third-primary-bgcolor), 0.5);
+        max-width: 100vw !important;
+        /* Set max width to 50% of the viewport */
+        border-radius: 30px;
+        backdrop-filter: blur(5px);
+        margin-left: auto;
+        /* Align menu to the right */
+        border-bottom: 0.5px solid rgba(var(--second-primary-bgcolor), 0.2);
+      }
+
+      .nav-link:hover {
+        color: rgba(var(--second-primary-fgcolor), 1) !important;
+        background-color: rgba(var(--second-primary-bgcolor), 0.3);
+      }
+
+      .dropdown-menu {
+        background-color: rgba(var(--third-primary-bgcolor), 0.5) !important;
+        backdrop-filter: blur(5px);
+        max-width: 90% !important;
+        transform: translateX(6%);
+      }
+    }
+
+    @media (width>=501px) and (width<=991px) {
+
+      /* Custom CSS for navbar and hero section */
+      .navbar-custom {
+        background-color: rgba(var(--primary-bgcolor), 0) !important;
+        width: 100%;
+        top: 44px;
+        /* Space below the announcement bar */
+        z-index: 10;
+        text-align: center;
+      }
+
+      .navbar-scrolled {
+        color: rgba(var(--second-primary-fgcolor), 1) !important;
+        background-color: rgba(var(--third-primary-bgcolor), 0.5) !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav-link {
+        background-color: rgba(var(--third-primary-bgcolor), 0.5);
+        max-width: 50vw !important;
+        /* Set max width to 50% of the viewport */
+        border-radius: 30px;
+        backdrop-filter: blur(5px);
+        margin-left: auto;
+        /* Align menu to the right */
+        border-bottom: 0.5px solid rgba(var(--second-primary-bgcolor), 0.2);
+      }
+
+      .nav-link:hover {
+        color: rgba(var(--second-primary-fgcolor), 1) !important;
+        background-color: rgba(var(--second-primary-bgcolor), 0.3);
+      }
+
+      .dropdown-menu {
+        background-color: rgba(var(--third-primary-bgcolor), 0.5) !important;
+        backdrop-filter: blur(5px);
+        max-width: 45% !important;
+        transform: translateX(115%);
+      }
+    }
+
+    /* Announcement Bar, Navbar & Cover (End) */
+
+    /* About (Start) */
+
+    h2 {
+      color: rgba(var(--primary-fgcolor), 0.8);
+      margin-bottom: 2rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      font-size: 2rem;
+    }
+
+    h2:hover {
+      color: rgba(var(--primary-fgcolor), 1);
+    }
+
+    section {
+      background-color: #f4f7fc;
+      color: rgba(var(--third-primary-fgcolor), 0.8);
+      line-height: 1.8;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* Section Styles */
+    .section-style {
+      padding: 6rem 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    .section-style.fade-in {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .bg-light {
+      background: linear-gradient(135deg, rgba(var(--primary-bgcolor), 0), rgba(var(--primary-bgcolor), 0.1));
+    }
+
+    /* Box Shadow & Hover Effects */
+    .shadow-box {
+      background: rgba(var(--second-primary-bgcolor), 1);
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+      p {
+        text-align: justify;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+      }
+    }
+
+    .shadow-box:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 767px) {
+      .section {
+        padding: 4rem 1rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    /* About (End) */
+
+    /* Footer (Start) */
+
+    footer {
+      background-color: rgba(var(--primary-bgcolor), 0.8);
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      color: rgba(var(--second-primary-fgcolor), 1);
+      /* font-size: 0.9rem; */
+
+      & {
+        a {
+          text-decoration: none;
+          color: rgba(var(--second-primary-fgcolor), 1);
+        }
+
+        & {
+          a:hover {
+            color: rgba(var(--second-primary-fgcolor), 0.8);
+          }
+        }
+      }
+    }
+
+    /* Footer (End) */
+
+    /* Scroll to Top Button (Start) */
+
+    .scroll-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgb(var(--primary-btncolor), 1);
+      color: rgba(var(--second-primary-fgcolor), 1);
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .scroll-to-top.show {
+      display: flex;
+    }
+
+    /* Scroll to Top Button (End) */
+  </style>
+</head>
+
+<body>
+  <!-- Announcement Bar, Navbar & Cover (Start) -->
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    📢 Your Partner in Digital Growth! - Let’s Begin! <a href="./contact.html">Enquiry Now</a>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top navbar-scrolled">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="./index.html">
+        <img src="./assets/Images/LOGOs/TechBridgeLogo.png" alt="Logo" width="40" height="40"
+          class="d-inline-block align-text-middle" />
+      </a>
+
+      <!-- Toggler for mobile view -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-grid text-white border-0"></i>
+      </button>
+
+      <!-- Menu items -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <h6 class="dropdown-header">Business Digital Services</h6>
+              </li>
+              <li><a class="dropdown-item" href="./websitedevelopment.html">Website Development</a></li>
+              <li><a class="dropdown-item" href="./digitalmarketing.html">Digital Marketing</a></li>
+              <li><a class="dropdown-item" href="./graphicdesigning.html">Graphic Designing</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <h6 class="dropdown-header">IT Training</h6>
+              </li>
+              <li><a class="dropdown-item" href="./courses.html">Explore Courses</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <video autoplay="autoplay" muted="muted" loop="loop">
+      <source src="https://cdn.pixabay.com/video/2021/07/20/82170-577893740_large.mp4" type="video/mp4">
+      </source>
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>ABOUT US</h1>
+    </div>
+  </div>
+
+  <!-- Announcement Bar, Navbar & Cover (End) -->
+
+  <!-- About (Start) -->
+
+  <!-- About TechBridge Technologies -->
+  <section class="section section-style bg-light fade-in" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2>About TechBridge Technologies</h2>
+          <div class="shadow-box">
+            <p>Established in 2016, <strong>TechBridge Technologies</strong> has become a beacon of
+              excellence in both
+              digital services and IT training, seamlessly bridging the gap between innovation and
+              education. Our mission is to empower businesses with cutting-edge digital solutions while
+              equipping individuals with industry-relevant skills to thrive in today’s competitive
+              landscape. We take pride in our dual-focused approach, delivering exceptional digital
+              services tailored to the needs of businesses while fostering talent through meticulously
+              designed IT training programs.</p>
+
+            <p>As a forward-thinking organization, <strong>TechBridge Technologies</strong> stands at the
+              forefront of
+              technological advancement and professional development. Our digital services encompass a
+              wide range of solutions, from dynamic website development to impactful digital marketing
+              strategies and innovative graphic design projects. Simultaneously, our IT training programs
+              cater to individuals from diverse backgrounds, offering both short-term certifications and
+              long-term courses that build expertise in web development, programming, graphic designing,
+              digital marketing, and foundational IT skills.</p>
+
+            <p>Our team comprises a group of dedicated professionals driven by a shared passion for
+              innovation and education. With years of experience and a commitment to quality, we cater to
+              businesses of all sizes—ranging from startups to established enterprises—helping them
+              achieve their digital transformation goals. Similarly, we provide an inclusive learning
+              environment where students, professionals, housewives, and marketers can enhance their
+              skills and unlock new career opportunities.</p>
+
+            <p>At <strong>TechBridge Technologies</strong>, we believe in the transformative power of
+              technology and
+              education. Through personalized solutions, hands-on training, and an unwavering dedication
+              to excellence, we are shaping the future of businesses and individuals alike, enabling them
+              to excel in the ever-evolving digital era.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About the Founder -->
+  <section class="section section-style fade-in" id="founder">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2>Meet Our Founder</h2>
+          <div class="shadow-box">
+            <p><strong>Pavan Sangareddypeta</strong>, the founder of <strong>TechBridge
+                Technologies</strong>, has been actively contributing
+              to the IT industry for over a decade. With extensive experience in website development,
+              graphic designing, digital marketing, and IT training, he has supported businesses and
+              individuals in achieving their goals in the digital domain.</p>
+
+            <p><strong>Pavan</strong> began his journey in IT training in 2009, helping individuals build
+              foundational skills
+              and advance their careers. In 2013, he expanded into website development, focusing on
+              creating functional and user-friendly websites tailored to business needs. His work in
+              graphic designing began in 2019, offering creative branding and visual solutions to enhance
+              business identity. In 2021, he further diversified his expertise by specializing in digital
+              marketing, helping businesses effectively promote their products and services online.</p>
+
+            <p>His practical approach and commitment to quality ensure that the services and training
+              programs offered by <strong>TechBridge Technologies</strong> are effective and aligned with
+              industry
+              standards. <strong>Pavan’s</strong> teaching philosophy emphasizes step-by-step, practical
+              learning, catering to participants at all levels. Whether teaching IT basics or advanced skills in graphic
+              designing, web development, or digital marketing, his focus is on clear, hands-on guidance
+              that builds confidence and expertise. His methods include practical exercises, group
+              discussions, and project-based learning for a well-rounded understanding.</p>
+
+            <p>Beyond training, <strong>Pavan</strong> is actively involved in delivering digital services
+              that meet the unique needs of businesses. From designing graphic works, websites to crafting tailored
+              marketing strategies, his work reflects a balanced approach that combines technical proficiency with
+              practical application.</p>
+
+            <p>Through <strong>TechBridge Technologies</strong>, <strong>Pavan</strong> continues to provide
+              accessible, industry-relevant training and services that enable individuals and businesses to adapt and
+              thrive in today’s digital environment. His straightforward and effective approach has consistently helped
+              clients and learners achieve their goals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Digital Services -->
+  <section class="section section-style bg-light fade-in" id="services">
+    <div class="container">
+      <h2 class="text-center">Our Digital Services</h2>
+      <div class="shadow-box">
+        <p><strong>TechBridge Technologies</strong> offers a comprehensive suite of digital services designed to
+          help businesses succeed in the modern digital landscape. We specialize in empowering businesses to
+          thrive in the digital world. With over a decade of experience, we deliver cutting-edge website
+          development, graphic designing, and digital marketing solutions that help you establish a strong
+          online presence, engage customers, and drive growth. Our core philosophy is to provide
+          results-driven solutions that prioritize quality, commitment, and innovation. We work closely with
+          you to understand your unique needs and tailor our services to help your business succeed. Whether
+          you need a dynamic website, a compelling brand identity, or effective digital marketing strategies,
+          we’re here to ensure your business stands out and reaches its full potential. Our expertise
+          includes:</p>
+
+        <p><strong>Website Development:</strong> We specialize in creating professional, user-friendly websites
+          tailored to your unique needs. Whether it’s WordPress solutions or full-fledged eCommerce platforms,
+          our websites are designed to impress and perform.</p>
+        <p><strong>Graphic Designing:</strong> Our creative team brings your ideas to life with bespoke logo
+          designs, branding solutions, and engaging video editing services. We aim to visually represent your
+          brand’s identity and message effectively.</p>
+        <p><strong>Digital Marketing:</strong> We craft targeted campaigns on platforms like Google, YouTube,
+          Facebook, and Instagram, ensuring your brand reaches the right audience. From SEO to social media
+          advertising, our strategies drive growth and visibility.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IT Training -->
+  <section class="section section-style fade-in" id="training">
+    <div class="container">
+      <h2 class="text-center">IT Training Programs</h2>
+      <div class="shadow-box">
+        <p><strong>TechBridge Technologies</strong> offers comprehensive, industry-focused IT training programs designed
+          to empower
+          learners with the practical skills and knowledge essential to excel in today’s dynamic tech environment. Our
+          courses cater to a wide range of learners, from beginners aiming to build a strong foundation to professionals
+          seeking to enhance their expertise and advance their careers.
+
+          We provide flexible learning options, including both online and offline formats, to accommodate diverse
+          schedules and learning preferences. Our programs emphasize a hands-on, project-based approach, ensuring that
+          learners not only understand theoretical concepts but also apply them effectively in real-world scenarios.
+
+          Whether you aspire to start a career in tech, upskill for better job opportunities, or stay ahead in a rapidly
+          evolving industry, <strong>TechBridge Technologies</strong> equips you with the tools to succeed. With
+          personalized guidance,
+          group discussions, our training ensures you develop confidence and competence to thrive in the competitive job
+          market.</p>
+        <p class="fw-bold">Our courses include:</p>
+        <ul>
+          <li>IT Basics</li>
+          <li>Office Tools</li>
+          <li>Design & Development</li>
+          <li>Programming & Databases</li>
+          <li>Digital Marketing</li>
+        </ul>
+        <p>...And much more!</p>
+        <p>All our programs are delivered with a step-by-step, practical methodology, including group
+          discussions, hands-on projects, and exams, to ensure you master the skills necessary for success in
+          the industry.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About (End) -->
+
+  <!-- Footer (Start) -->
+
+  <footer class="mt-auto">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <!-- Column 1: Company Information -->
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">TechBridge Technologies</h5>
+          <p class="mb-1">Near Tara Degree College, 2nd Gate, Opp: Apollo Pharmacy, By Pass Road, Sangareddy,
+          </p>
+          <p class="mb-1"> Telangana 502001.</p>
+          <p class="mb-0">Mobile: <a href="tel:+919666622269">+91 9666622269</a></p>
+          <div class="mt-3">
+            <img src="./assets/Images/LOGOs/Trusted.png" alt="Trusted" class="img-fluid me-4" style="width: 32%;" />
+            <img src="./assets/Images/LOGOs/GoogleRating.png" alt="Google Rating" class="img-fluid"
+              style="width: 35%;" />
+          </div>
+        </div>
+
+        <!-- Column 2: Services -->
+        <div class="col-md-3 mb-3">
+          <h6 class="fw-bold">Services</h6>
+          <p class="mb-1 fw-bold">Digital Services:</p>
+          <ul class="list-unstyled">
+            <li><a href="./websitedevelopment.html">Website Development</a></li>
+            <li><a href="./digitalmarketing.html">Digital Marketing</a></li>
+            <li><a href="./graphicdesigning.html">Graphic Designing</a></li>
+          </ul>
+          <p class="mb-1 fw-bold">IT Training:</p>
+          <ul class="list-unstyled">
+            <li><a href="./courses.html">Explore Courses</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Website Links -->
+        <div class="col-md-3 mb-3">
+          <h6 class="fw-bold">Website - Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./termsandconditions.html">Terms And Conditions</a></li>
+            <li><a href="./privacypolicy.html">Privacy Policy</a></li>
+          </ul>
+
+          <h6 class="fw-bold mt-3">IT Training - Links</h6>
+          <div clas="social-links">
+            <a href="https://www.youtube.com/@techbridgeinstitute" class="me-2"><i class="bi bi-youtube"></i></a>
+            <a href="https://www.facebook.com/TechBridgeITInstitute/" class="me-2"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/techbridgeinstitute"><i class="bi bi-instagram"></i></a>
+          </div>
+          <h6 class="fw-bold mt-3">Digital Services - Links</h6>
+          <div clas="social-links">
+            <a href="https://www.youtube.com/@techbridgeds" class="me-2"><i class="bi bi-youtube"></i></a>
+            <a href="https://www.facebook.com/TechBridgeDS/" class="me-2"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/techbridgeds/"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 4: Personal Links -->
+        <div class="col-md-2 mb-3">
+          <h6 class="fw-bold">Personal - Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="https://pavan.techbridge.site/"><i class="bi bi-globe"></i> Website</a></li>
+            <li><a href="https://www.facebook.com/pavansangareddypeta"><i class="bi bi-facebook"></i> Facebook</a></li>
+            <li><a href="https://www.instagram.com/pavansangareddypeta/"><i class="bi bi-instagram"></i> Instagram</a>
+            </li>
+            <li><a href="https://wa.me/+919666622269"><i class="bi bi-whatsapp"></i> WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Footer Bottom Bar -->
+      <div class="text-center py-3 border-top">
+        <p class="mb-0">Designed &amp; Developed by <a href="https://www.techbridge.site/" class="fw-bold">TechBridge
+            Technologies</a> | All
+          Rights Reserved &copy; 2016 -
+          <script>document.write(new Date().getFullYear())</script>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Footer (End) -->
+
+  <!-- Scroll to Top Button (Start) -->
+
+  <div id="scrollToTop" class="scroll-to-top">
+    <i class="bi bi-chevron-up"></i>
+    <!-- <i class="bi bi-arrow-up"></i> -->
+  </div>
+
+  <!-- Scroll to Top Button (End) -->
+
+  <!-- Javascript -->
+
+  <!-- Announcement Bar, Navbar & Cover (Start) -->
+
+  <!-- Navbar Scroll Functionality -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navE = document.querySelector('.navbar');
+
+      // Function to update navbar transparency
+      const updateNavbarState = () => {
+        if (window.scrollY >= 56) {
+          navE.classList.add('navbar-scrolled');
+        } else {
+          navE.classList.remove('navbar-scrolled');
+        }
+      };
+
+      // Run immediately on page load
+      updateNavbarState();
+
+      // Update on scroll
+      window.addEventListener('scroll', updateNavbarState);
+    });
+  </script>
+
+  <!-- Toggle Button Open & Close Automatically -->
+  <script>
+    function toggleMenu(toggler) {
+      const nav = document.getElementById('navbarNav');
+      const isExpanded = toggler.getAttribute('aria-expanded') === 'true';
+      toggler.setAttribute('aria-expanded', !isExpanded);
+      nav.classList.toggle('show');
+    }
+
+    // Close the toggler when clicking outside the menu
+    document.addEventListener('click', (e) => {
+      const nav = document.getElementById('navbarNav');
+      const toggler = document.querySelector('.navbar-toggler');
+
+      if (
+        !nav.contains(e.target) && // Click is outside the navbar
+        !toggler.contains(e.target) && // Click is outside the toggler button
+        nav.classList.contains('show') // Menu is open
+      ) {
+        toggler.setAttribute('aria-expanded', false);
+        nav.classList.remove('show');
+      }
+    });
+  </script>
+
+  <!-- Announcement Bar, Navbar & Cover (End) -->
+
+  <!-- Scroll to Top Button (Start) -->
+  <script>
+    // Scroll to Top Functionality
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+    // Show/Hide Button on Scroll
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        scrollToTopBtn.classList.add('show');
+      } else {
+        scrollToTopBtn.classList.remove('show');
+      }
+    });
+
+    // Smooth Scroll to Top on Click
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+  <!-- Scroll to Top Button (End) -->
+
+  <!-- Right Click  Option Disabled (Start) -->
+
+  <script language=javascript>
+
+    var message = "Can't Access";
+
+    function clickIE4() {
+      if (event.button == 2) {
+        alert(message);
+        return false;
+      }
+    }
+
+    function clickNS4(e) {
+      if (document.layers || document.getElementById && !document.all) {
+        if (e.which == 2 || e.which == 3) {
+          alert(message);
+          return false;
+        }
+      }
+    }
+
+    if (document.layers) {
+      document.captureEvents(Event.MOUSEDOWN);
+      document.onmousedown = clickNS4;
+    }
+    else if (document.all && !document.getElementById) {
+      document.onmousedown = clickIE4;
+    }
+
+    document.oncontextmenu = new Function("alert(message);return false")
+  </script>
+
+  <!-- Right Click  Option Disabled (End) -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

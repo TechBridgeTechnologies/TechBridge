@@ -401,6 +401,112 @@
 
     /* Announcement Bar, Navbar & Cover (End) */
 
+    /* Our Graphic Design Services (Start) */
+
+    .service-section {
+      padding: 60px 0;
+    }
+
+    .os-section-title {
+      color: rgba(var(--primary-fgcolor), 0.8);
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      color: rgba(var(--second-primary-fgcolor), 1);
+    }
+
+    .service-card {
+      border: none;
+      transition: 0.3s;
+      color: rgba(var(--second-primary-fgcolor), 1);
+      text-align: center;
+    }
+
+    .cards {
+      h4 {
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Our Graphic Design Services (End) */
+
+    /* Our Design Process (Start) */
+
+    #process {
+      position: relative;
+      text-align: center;
+      padding: 60px 0;
+    }
+
+    #process .background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    #process .gradient-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom right, rgba(var(--primary-bgcolor), 0.7), rgba(var(--third-primary-bgcolor), 0.5));
+      z-index: -1;
+    }
+
+    #process .section-title {
+      color: rgba(var(--second-primary-fgcolor), 1);
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 50px;
+    }
+
+    #process .process-step {
+      border: 2px solid rgba(var(--second-primary-bgcolor), 1);
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: rgba(var(--second-primary-bgcolor), 1);
+    }
+
+    #process {
+      h5 {
+        margin-top: 20px;
+        color: rgba(var(--second-primary-bgcolor), 1);
+        font-size: 1.2rem;
+      }
+
+      p {
+        color: rgba(var(--second-primary-bgcolor), 0.8);
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Our Design Process (End) */
+
     /* Why Choose Us (Start) */
 
     /* Section Styling */
@@ -513,6 +619,84 @@
     }
 
     /* Why Choose Us (End) */
+
+    /* Industries We Serve (Start)  */
+
+    .industries {
+      position: relative;
+      color: rgba(var(--second-primary-fgcolor), 1);
+      overflow: hidden;
+    }
+
+    .iws-section-title {
+      color: rgba(var(--second-primary-fgcolor), 1);
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom right, rgba(var(--primary-bgcolor), 0.7), rgba(var(--third-primary-bgcolor), 0.5));
+      z-index: -1;
+    }
+
+    .industry-box {
+      text-align: center;
+      padding: 20px;
+      background: rgba(var(--second-primary-bgcolor), 0);
+      border : 1px solid rgba(var(--second-primary-fgcolor), 1);
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+      margin: auto;
+    }
+
+    .industry-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .icon {
+      color: rgba(var(--second-primary-fgcolor), 1);
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .industry-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .industry-label {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    /* Industries We Serve (End)  */
 
     /* Footer (Start) */
 
@@ -648,6 +832,116 @@
 
   <!-- Announcement Bar, Navbar & Cover (End) -->
 
+  <!-- Our Graphic Design Services (Start) -->
+
+  <section class="service-section text-center bg-light">
+    <div class="container-fluid">
+      <h2 class="os-section-title">Our Graphic Design Services</h2>
+      <p class="mb-5 text-muted">Professional graphic design services to elevate your brand with stunning visuals.</p>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card service-card p-4 bg-primary">
+            <i class="bi bi-palette service-icon"></i>
+            <div class="card-body cards">
+              <h4 class="card-title">Branding & Identity Design</h4>
+              <p class="card-text">Craft a strong visual identity that represents your brand.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card service-card p-4 bg-success">
+            <i class="bi bi-megaphone service-icon"></i>
+            <div class="card-body cards">
+              <h4 class="card-title">Marketing & Advertising Design</h4>
+              <p class="card-text">Engaging designs for promotional materials and campaigns.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card service-card p-4 bg-warning">
+            <i class="bi bi-window service-icon"></i>
+            <div class="card-body cards">
+              <h4 class="card-title">UI/UX & Web Design</h4>
+              <p class="card-text">User-friendly website and app designs for seamless experiences.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card service-card p-4 bg-info">
+            <i class="bi bi-share service-icon"></i>
+            <div class="card-body cards">
+              <h4 class="card-title">Social Media Graphics</h4>
+              <p class="card-text">Creative visuals to enhance your social media presence.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card service-card p-4 bg-secondary">
+            <i class="bi bi-box-seam service-icon"></i>
+            <div class="card-body cards">
+              <h4 class="card-title">Packaging Design</h4>
+              <p class="card-text">Attractive packaging solutions that enhance product appeal.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card service-card p-4 bg-danger">
+            <i class="bi bi-pencil service-icon"></i>
+            <div class="card-body cards">
+              <h4 class="card-title">Custom Illustrations</h4>
+              <p class="card-text">Unique and custom illustrations tailored precisely to your brand’s
+                needs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Graphic Design Services (End) -->
+
+  <!-- Our Design Process (Start) -->
+
+  <section id="process">
+    <video class="background-video" autoplay muted loop>
+      <source src="https://cdn.pixabay.com/video/2021/07/12/81095-574743676_large.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="gradient-overlay"></div>
+    <div class="container-fluid">
+      <h2 class="section-title">Our Design Process</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-2">
+          <div class="process-step">1</div>
+          <h5>Understanding Requirements</h5>
+          <p>Gathering project details, goals, and vision.</p>
+        </div>
+        <div class="col-md-2">
+          <div class="process-step">2</div>
+          <h5>Research & Brainstorming</h5>
+          <p>Analyzing trends and generating creative ideas.</p>
+        </div>
+        <div class="col-md-2">
+          <div class="process-step">3</div>
+          <h5>Sketch & Wireframes</h5>
+          <p>Drafting the structure and layout of the design.</p>
+        </div>
+        <div class="col-md-2">
+          <div class="process-step">4</div>
+          <h5>Design & Revisions</h5>
+          <p>Creating designs and refining with feedback.</p>
+        </div>
+        <div class="col-md-2">
+          <div class="process-step">5</div>
+          <h5>Final Delivery</h5>
+          <p>Providing high-quality designs ready for use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Design Process (End) -->
+
   <!-- Why Choose Us (Start) -->
 
   <section class="choose-us-section">
@@ -704,6 +998,74 @@
   </section>
 
   <!-- Why Choose Us (End) -->
+
+  <!-- Industries We Serve (Start) -->
+
+  <section class="industries py-5">
+    <video class="background-video" autoplay loop muted>
+      <source src="https://cdn.pixabay.com/video/2021/07/12/81095-574743676_large.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="container-fluid">
+      <div class="text-center mb-5">
+        <h2 class="iws-section-title">Industries We Serve</h2>
+        <p class="text-light">We cater to a diverse range of industries, delivering exceptional graphic design
+          solutions.</p>
+      </div>
+      <div class="industry-container">
+        <div>
+          <div class="industry-box text-primary"><i class="fas fa-microchip icon"></i></div>
+          <p class="industry-label">Technology</p>
+        </div>
+        <div>
+          <div class="industry-box text-danger"><i class="fas fa-hospital icon"></i></div>
+          <p class="industry-label">Healthcare & Medical</p>
+        </div>
+        <div>
+          <div class="industry-box text-success"><i class="fas fa-graduation-cap icon"></i></div>
+          <p class="industry-label">Education & E-learning</p>
+        </div>
+        <div>
+          <div class="industry-box text-warning"><i class="fas fa-store icon"></i></div>
+          <p class="industry-label">Retail & E-commerce</p>
+        </div>
+        <div>
+          <div class="industry-box text-info"><i class="fas fa-utensils icon"></i></div>
+          <p class="industry-label">Food & Beverage</p>
+        </div>
+        <div>
+          <div class="industry-box text-secondary"><i class="fas fa-building icon"></i></div>
+          <p class="industry-label">Real Estate</p>
+        </div>
+        <div>
+          <div class="industry-box text-dark"><i class="fas fa-briefcase icon"></i></div>
+          <p class="industry-label">Corporate & Business</p>
+        </div>
+        <div>
+          <div class="industry-box text-primary"><i class="fas fa-film icon"></i></div>
+          <p class="industry-label">Entertainment & Media</p>
+        </div>
+        <div>
+          <div class="industry-box text-danger"><i class="fas fa-paint-brush icon"></i></div>
+          <p class="industry-label">Creative Agencies</p>
+        </div>
+        <div>
+          <div class="industry-box text-warning"><i class="fas fa-tshirt icon"></i></div>
+          <p class="industry-label">Fashion</p>
+        </div>
+        <div>
+          <div class="industry-box text-success"><i class="fas fa-coins icon"></i></div>
+          <p class="industry-label">FinTech</p>
+        </div>
+        <div>
+          <div class="industry-box text-muted"><i class="fas fa-industry icon"></i></div>
+          <p class="industry-label">Other Industries</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries We Serve (End) -->
 
   <!-- Footer (Start) -->
 

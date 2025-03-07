@@ -589,10 +589,50 @@
         justify-content: center;
         /* Center horizontally */
       }
-
     }
 
     /* Courses (End) */
+
+    /* Certification Verification (Start) */
+
+    #CertificationVerification {
+      .title {
+        h2 {
+          font-size: 2rem;
+          font-weight: 600;
+          text-align: center;
+          color: rgba(var(--primary-fgcolor), 0.8);
+          margin-bottom: 15px;
+        }
+
+        p {
+          font-size: 1rem;
+          text-align: center;
+          color: rgba(var(--third-primary-fgcolor), 1);
+        }
+      }
+
+      .info-box {
+        background-color: rgba(var(--primary-bgcolor), 0.8);
+        color: rgba(var(--second-primary-bgcolor), 1);
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .info-box:hover {
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        .info-box {
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    /* Certification Verification (End) */
 
     /* Footer (Start) */
 
@@ -1148,6 +1188,53 @@
   </div>
   <!-- Courses (End) -->
 
+  <!-- Certification Verification (Start) -->
+
+  <section class="container py-5" id="CertificationVerification">
+    <div class="text-center mb-4 title">
+      <h2 class="">Certification Verification</h2>
+      <p class="text-muted">Verify the authenticity of TechBridge Technologies certificates online.</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-sm p-4">
+          <h5 class="text-center mb-3">Verify Your Certificate</h5>
+          <div class="mb-3">
+            <input type="text" id="certificateID" class="form-control" placeholder="Enter Certificate SR NO" required>
+          </div>
+          <div class="d-grid">
+            <button onclick="verifyCertificate()" class="btn btn-primary">Verify Now</button>
+          </div>
+          <div id="verificationResult" class="mt-3"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row text-center mt-4">
+      <div class="col-md-4">
+        <div class="info-box">
+          <h6 class="fw-bold">✔ Employers</h6>
+          <p>Easily confirm candidate credentials.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="info-box">
+          <h6 class="fw-bold">✔ Students</h6>
+          <p>Showcase verified skills to recruiters.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="info-box">
+          <h6 class="fw-bold">✔ Secure</h6>
+          <p>Tamper-proof certification process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certification Verification (End) -->
+
   <!-- Footer (Start) -->
 
   <footer class="mt-auto">
@@ -1306,6 +1393,58 @@
   </script>
 
   <!-- Announcement Bar, Navbar & Cover (End) -->
+
+  <!-- Certification Verification (Start) -->
+
+  <script>
+    let apiURL = "https://script.google.com/macros/s/AKfycbwz6EOjFwCUPEdODF_a7LqQmiG0mXr6sivbGOBsR6b5w4KIPv6uHMLsxvdW_-4qhTBpKg/exec";
+
+    function verifyCertificate() {
+      let inputID = document.getElementById("certificateID").value.trim();
+      let resultDiv = document.getElementById("verificationResult");
+
+      if (!inputID) {
+        resultDiv.innerHTML = `<div class='alert alert-warning'>Please enter a Certificate SR NO.</div>`;
+        return;
+      }
+
+      fetch(apiURL + "?id=" + encodeURIComponent(inputID))
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            resultDiv.innerHTML = `
+                          <div class='alert alert-success'>
+                              <h5 class="fw-bold text-center">Verification Successful!</h5>
+                              <hr>
+                              <div class="table-responsive">
+                                  <table class='table table-bordered table-hover table-striped'>
+                                        <tr><th>Student Name</th><td>${data.student_name}</td></tr>
+                                        <tr><th>Course & Duration</th><td>${data.course}</td></tr>
+                                        <tr><th>Mode of Training</th><td>${data.course_type}</td></tr>
+                                        <tr><th>Certificate Issue Date</th><td>${formatDate(data.issue_date)}</td></tr>
+                                        <tr><th>Certificate Format</th><td>${data.issue_type}</td></tr>
+                                        <tr><th>Issued Status</th><td>${data.issued_status}</td></tr>
+                                  </table>
+                              </div>
+                          </div>`;
+          } else {
+            resultDiv.innerHTML = `<div class='alert alert-danger'>${data.message}</div>`;
+          }
+        })
+        .catch(error => {
+          console.error("Error verifying certificate:", error);
+          resultDiv.innerHTML = `<div class='alert alert-danger'>Error verifying certificate. Please try again later.</div>`;
+        });
+    }
+
+    function formatDate(dateString) {
+      let date = new Date(dateString);
+      let options = { day: '2-digit', month: 'long', year: 'numeric' };
+      return date.toLocaleDateString('en-GB', options); // Formats as "30 January 2018"
+    }
+  </script>
+
+  <!-- Certification Verification (End) -->
 
   <!-- Scroll to Top Button (Start) -->
 

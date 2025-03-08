@@ -1191,8 +1191,8 @@
   <!-- Certification Verification (Start) -->
 
   <section class="container py-5" id="CertificationVerification">
-    <div class="text-center mb-4 title">
-      <h2 class="">Certification Verification</h2>
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">Certification Verification</h2>
       <p class="text-muted">Verify the authenticity of TechBridge Technologies certificates online.</p>
     </div>
 
@@ -1201,7 +1201,8 @@
         <div class="card shadow-sm p-4">
           <h5 class="text-center mb-3">Verify Your Certificate</h5>
           <div class="mb-3">
-            <input type="text" id="certificateID" class="form-control" placeholder="Enter Certificate SR NO" required>
+            <input type="text" id="certificateID" class="form-control" placeholder="Enter Certificate ID" required
+              oninput="sanitizeInput();">
           </div>
           <div class="d-grid">
             <button onclick="verifyCertificate()" class="btn btn-primary">Verify Now</button>
@@ -1400,11 +1401,10 @@
     let apiURL = "https://script.google.com/macros/s/AKfycbwz6EOjFwCUPEdODF_a7LqQmiG0mXr6sivbGOBsR6b5w4KIPv6uHMLsxvdW_-4qhTBpKg/exec";
 
     function verifyCertificate() {
-      let inputID = document.getElementById("certificateID").value.trim();
-      let resultDiv = document.getElementById("verificationResult");
+      let inputID = document.getElementById("certificateID").value.trim().toUpperCase().replace(/[^A-Z0-9\/]/g, "");
 
       if (!inputID) {
-        resultDiv.innerHTML = `<div class='alert alert-warning'>Please enter a Certificate SR NO.</div>`;
+        document.getElementById("verificationResult").innerHTML = `<div class='alert alert-warning text-center'>Please Enter A Valid Certificate ID.</div>`;
         return;
       }
 
@@ -1412,35 +1412,42 @@
         .then(response => response.json())
         .then(data => {
           if (data.success) {
-            resultDiv.innerHTML = `
-                          <div class='alert alert-success'>
-                              <h5 class="fw-bold text-center">Verification Successful!</h5>
-                              <hr>
-                              <div class="table-responsive">
-                                  <table class='table table-bordered table-hover table-striped'>
-                                        <tr><th>Student Name</th><td>${data.student_name}</td></tr>
-                                        <tr><th>Course & Duration</th><td>${data.course}</td></tr>
-                                        <tr><th>Mode of Training</th><td>${data.course_type}</td></tr>
-                                        <tr><th>Certificate Issue Date</th><td>${formatDate(data.issue_date)}</td></tr>
-                                        <tr><th>Certificate Format</th><td>${data.issue_type}</td></tr>
-                                        <tr><th>Issued Status</th><td>${data.issued_status}</td></tr>
-                                  </table>
-                              </div>
-                          </div>`;
+            let formattedDate = formatDate(data.issue_date);
+            document.getElementById("verificationResult").innerHTML = `
+                        <div class='alert alert-success'>
+                            <h5 class="fw-bold text-center">Verification Successful!</h5>
+                            <hr>
+                            <div class="table-responsive">
+                                <table class='table table-bordered table-hover table-striped'>
+                                    <tr><th>Student Name</th><td>${data.student_name}</td></tr>
+                                    <tr><th>Course</th><td>${data.course}</td></tr>
+                                    <tr><th>Course Type</th><td>${data.course_type}</td></tr>
+                                    <tr><th>Certificate Date of Issue</th><td>${formattedDate}</td></tr>
+                                    <tr><th>Certificate Type of Issue</th><td>${data.issue_type}</td></tr>
+                                    <tr><th>Issued Status</th><td>${data.issued_status}</td></tr>
+                                </table>
+                            </div>
+                        </div>`;
           } else {
-            resultDiv.innerHTML = `<div class='alert alert-danger'>${data.message}</div>`;
+            document.getElementById("verificationResult").innerHTML = `<div class='alert alert-danger'>${data.message}</div>`;
           }
         })
         .catch(error => {
-          console.error("Error verifying certificate:", error);
-          resultDiv.innerHTML = `<div class='alert alert-danger'>Error verifying certificate. Please try again later.</div>`;
+          console.error("Error Verifying Certificate:", error);
+          document.getElementById("verificationResult").innerHTML = `<div class='alert alert-danger text-center'>Error Verifying Certificate. Please Try Again Later.</div>`;
         });
     }
 
     function formatDate(dateString) {
-      let date = new Date(dateString);
+      let dateObj = new Date(dateString);
+      if (isNaN(dateObj)) return "Invalid Date";
       let options = { day: '2-digit', month: 'long', year: 'numeric' };
-      return date.toLocaleDateString('en-GB', options); // Formats as "30 January 2018"
+      return dateObj.toLocaleDateString('en-GB', options);
+    }
+
+    function sanitizeInput() {
+      let inputField = document.getElementById("certificateID");
+      inputField.value = inputField.value.toUpperCase().replace(/[^A-Z0-9\/]/g, "");
     }
   </script>
 

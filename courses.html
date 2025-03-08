@@ -471,6 +471,53 @@
 
     /* Announcement Bar, Navbar & Cover (End) */
 
+    /* Why Choose US (Start) */
+
+    /* Section Styling */
+
+    #whychooseus {
+      text-align: center;
+      background: #f8f9fa;
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: 600;
+        color: rgba(var(--primary-fgcolor), 0.8);
+      }
+
+      /* Card Styling */
+      .cards {
+        background: rgba(var(--second-primary-bgcolor), 1);
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+        padding: 20px;
+
+        & h4 {
+          font-weight: 600;
+          font-size: 1.2rem;
+        }
+
+        & p {
+          font-size: 1rem;
+        }
+      }
+
+      .cards:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .icon-box {
+        font-size: 2.5rem;
+        color: rgba(var(--primary-fgcolor), 0.8);
+      }
+
+    }
+
+    /* Why Choose US (End) */
+
     /* Courses (Start) */
 
     .courses-body {
@@ -596,20 +643,17 @@
     /* Certification Verification (Start) */
 
     #CertificationVerification {
-      .title {
-        h2 {
-          font-size: 2rem;
-          font-weight: 600;
-          text-align: center;
-          color: rgba(var(--primary-fgcolor), 0.8);
-          margin-bottom: 15px;
-        }
 
-        p {
-          font-size: 1rem;
-          text-align: center;
-          color: rgba(var(--third-primary-fgcolor), 1);
-        }
+      h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: rgba(var(--primary-fgcolor), 0.8);
+      }
+
+      p {
+        font-size: 1rem;
+        text-align: center;
+        color: rgba(var(--second-primary-fgcolor), 1);
       }
 
       .info-box {
@@ -633,6 +677,25 @@
     }
 
     /* Certification Verification (End) */
+
+    /* FAQ (Start) */
+
+    .faq-section {
+      background: #f8f9fa;
+
+      & h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: rgba(var(--primary-fgcolor), 0.8);
+      }
+    }
+
+    .accordion-header>.accordion-button {
+      color: rgba(var(--third-primary-fgcolor), 0.8);
+      font-weight: 600;
+    }
+
+    /* FAQ (End) */
 
     /* Footer (Start) */
 
@@ -780,7 +843,77 @@
 
   <!-- Announcement Bar, Navbar & Cover (End) -->
 
+  <!-- Why Choose US (Start) -->
+
+  <section class="why-choose-us py-5" id="whychooseus">
+    <div class="container">
+      <h2 class="section-title">Why Choose Us?</h2>
+      <p class="text-muted mb-5">We provide high-quality IT training designed to empower your skills and career growth.
+      </p>
+
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cards text-center">
+            <div class="icon-box">
+              <i class="bi bi-mortarboard-fill"></i>
+            </div>
+            <h4 class="mt-3">Expert Instructors</h4>
+            <p>Learn from highly experienced professionals with hands-on training.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cards text-center">
+            <div class="icon-box">
+              <i class="bi bi-easel-fill"></i>
+            </div>
+            <h4 class="mt-3">Practical Learning</h4>
+            <p>Step-by-step learning with practical exercises and detailed examples.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cards text-center">
+            <div class="icon-box">
+              <i class="bi bi-patch-check-fill"></i>
+            </div>
+            <h4 class="mt-3">Certified Courses</h4>
+            <p>Earn a prestigious IT certification to validate your expertise.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-6">
+          <div class="cards text-center">
+            <div class="icon-box">
+              <i class="bi bi-code-slash"></i>
+            </div>
+            <h4 class="mt-3">Latest Technologies</h4>
+            <p>Learn trending skills like AI, Web Dev, Digital Marketing, and more.</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-md-6">
+          <div class="cards text-center">
+            <div class="icon-box">
+              <i class="bi bi-people-fill"></i>
+            </div>
+            <h4 class="mt-3">Personalized Guidance</h4>
+            <p>One-on-one mentorship and doubt-clearing sessions for every student.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose US (End) -->
+
   <!-- Courses (Start) -->
+
   <div class="container-fluid py-5 courses-body">
     <div class="tech-imp">
       <h2>Importance of Technical Knowledge</h2>
@@ -1186,13 +1319,14 @@
       </div>
     </div>
   </div>
+
   <!-- Courses (End) -->
 
   <!-- Certification Verification (Start) -->
 
   <section class="container py-5" id="CertificationVerification">
     <div class="text-center mb-4">
-      <h2 class="fw-bold">Certification Verification</h2>
+      <h2>Certification Verification</h2>
       <p class="text-muted">Verify the authenticity of TechBridge Technologies certificates online.</p>
     </div>
 
@@ -1235,6 +1369,114 @@
   </section>
 
   <!-- Certification Verification (End) -->
+
+  <!-- FAQ (Start) -->
+
+  <section class="faq-section py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+
+      <div class="accordion" id="faqAccordion">
+        <!-- FAQ 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1"
+              aria-expanded="true">
+              Do you provide both online and offline training?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes! We provide both online and offline training, ensuring flexibility for students,
+              professionals, and business owners across India and beyond.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              Is prior experience required to enroll in your courses?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              No, our courses are designed for beginners as well as professionals. We start from scratch
+              and progress to advanced levels.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              How long does each course take to complete?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Course durations vary depending on the program. We offer short-term certifications and
+              long-term professional courses.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+              What are the fees for your courses?
+            </button>
+          </h2>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Our course fees vary depending on the program. Please contact us for detailed pricing and
+              offers.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+              How can I enroll in a course?
+            </button>
+          </h2>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              You can enroll by:
+              <ul>
+                <li>Visiting our website and filling out the enrollment form.</li>
+                <li>Contacting us via WhatsApp or call.</li>
+                <li>Visiting our center in Sangareddy, Telangana.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+              Do you provide certifications?
+            </button>
+          </h2>
+          <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, we offer certifications, and you can verify them online through our certification
+              verification system.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (End) -->
 
   <!-- Footer (Start) -->
 
